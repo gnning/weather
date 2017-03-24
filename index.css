@@ -1,0 +1,198 @@
+            body{
+				margin:0;
+				padding:0;
+			}
+            .day,.week{
+				width:100%;
+				height:50vh;
+			}
+			.weather{
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0;left:0;
+				transform-origin:50% 50% -370px;
+				color:white;
+			}
+			.day{
+				transform-style:preserve-3d;
+				perspective:1000px;
+				color:white;
+			}
+			/*clould start*/
+			h2,p,h1{
+				margin:0;
+				padding:0;
+				text-align:center;
+				position:absolute;
+				left:50%;
+				transform: translateX(-50%);
+			}
+			h2{
+				top:15%;
+				font-size:1.5em;
+			}
+			p{
+				font-size:1.5em;
+				top:28%;
+			}
+			h1{
+				font-size:3em;
+				top:55%;
+				text-shadow:3px 0 2px black;
+				z-index:99;
+			}
+			/*云朵制作*/
+			.clould:before{
+				content:"";
+				position:absolute;
+				top:45%;left:35%;
+				transform: translate(-50%,-50%);
+				width:50px;
+				height:45px;
+				background:white;
+				border-radius:50%;
+				box-shadow:35px -15px 0 white,
+				           75px -5px 0 white,
+				           45px 25px 0 white,
+				           110px 15px 0 white,
+				           90px 28px 0 white,
+				           20px 20px 0 white;
+				z-index: 10;
+				animation:overcart 2s linear 0s alternate infinite;
+			}
+			/*太阳制作*/
+			.clould::after{
+				content:"";
+				position:absolute;
+				top:45%;
+				left:65%;
+				transform: translate(-50%,-50%);
+				width:42px;
+				height:42px;
+				background:radial-gradient(circle at left top,#fe9f38,#f46635);
+				border-radius:50%;
+				animation:shadow 2s linear 0s alternate infinite;
+			}
+			@keyframes overcart{
+				100%{
+					transform:translate(-20%,-50%);
+				}
+			}
+			@keyframes shadow{
+				100%{
+					transform:translate(-50%,-50%);
+				}
+			}
+			.clould{
+				background:skyblue;
+				transition:all 0.2s;
+			}
+			/*clould end*/
+			/*.thunder start*/
+			/*云朵制作*/
+			.thunder:before{
+				content:"";
+				position:absolute;
+				top:40%;left:40%;
+				transform: translate(-50%,-50%);
+				width:50px;
+				height:45px;
+				background:#171717;
+				border-radius:50%;
+				box-shadow:35px -15px 0 #171717,
+				           75px -5px 0 #171717,
+				           45px 25px 0 #171717,
+				           110px 15px 0 #171717,
+				           90px 28px 0 #171717,
+				           20px 20px 0 #171717;
+				animation:overcart 2s linear 0s alternate infinite;
+			}
+			/*云朵影子*/
+			.thunder::after{
+				content:"";
+				position:absolute;
+				top:80%;
+				left:50%;
+				transform: translate(-50%,-50%) scaleX(0.7);
+				width:120px;
+				height:30px;
+				background:rgba(0,0,0,0.5);
+				border-radius:50%;
+				animation:shadow 2s linear 0s alternate infinite;
+			}
+			/*闪电制作*/
+			.th{
+				position: absolute;
+			    top: 60%;
+			    left: 55%;
+				border-left:8px solid yellow;
+				border-bottom:40px solid transparent ;
+				box-shadow:-5px -38px 0 yellow;
+				transform: rotate(30deg);
+                transform-origin: center -50px;
+				animation:th 1s steps(1,end) infinite;
+			}
+			@keyframes overcart{
+				100%{
+					transform:translate(-50%,0%);
+				}
+			}
+			@keyframes shadow{
+				100%{
+					transform:translate(-50%,-50%) scalex(1);
+				}
+			}
+			@keyframes th{
+				0%{
+					transform:rotate(30deg);
+					opacity: 1;
+				}
+				25%{
+					transform:rotate(-30deg);
+					opacity: 1;
+				}
+				50%{
+					transform:rotate(0deg);
+					opacity: 1;
+				}
+				75%{
+					transform:rotate(-30deg);
+					opacity: 0;
+				}
+			}
+			.thunder{
+				background:#474747;
+				transform: rotatey(60deg);
+				transition:all 0.4s cubic-bezier(.62,1.73,.91,.58);
+			}
+			/*thunder end*/
+			
+			.day:hover .thunder{
+				transform: rotatey(0);
+			}
+			.day:hover .clould{
+				transform: rotatey(60deg);
+			}
+			/*week start*/
+			.week{
+				background:pink;
+				display: flex;
+				align-items:stretch;
+			}
+			.week>div{
+				flex-grow:1;
+				border-right:0.5px solid #ccc;
+				display: flex;
+				flex-direction: column;
+				align-items:stretch;
+			}
+			.week>div:last-child{
+				border-right-width:0;
+			}
+			.week>div>div{
+				flex-grow:1;
+				padding-top:20px;
+				text-align: center;
+			}
+			/*week end*/

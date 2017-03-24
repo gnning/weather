@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<title>天气预报</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<style type="text/css">
+			body{
+				margin:0;
+				padding:0;
+			}
+			.week{
+				background:pink;
+				display: flex;
+				align-items:stretch;
+			}
+			.week>div{
+				flex-grow:1;
+				border-right:0.5px solid #ccc;
+				display: flex;
+				flex-direction: column;
+				align-items:stretch;
+			}
+			.week>div:last-child{
+				border-right-width:0;
+			}
+			.week>div>div{
+				flex-grow:1;
+				padding-top:20px;
+				text-align: center;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="day">
+			<div class="weather clould">
+					<h2>WuXi</h2>
+				    <p>clould</p>
+				    <h1>10°</h1>
+			</div>
+		    <div class="weather thunder">
+				<h2>SuZhou</h2>
+				<p>thunder</p>
+				<h1>8°</h1>
+				<div class="th"></div>
+			</div>
+		</div>
+		<div class="week">
+			<div id="mon">
+				<div id="date">Mon</div>
+				<div id="icon"><img src="img/1.png"/></div>
+				<div id="ltemp">1°</div>
+				<div id="htemp">4°</div>
+			</div>
+			<div id="tues">
+				<div id="date">Tues</div>
+				<div id="icon"><img src="img/2.png"/></div>
+				<div id="ltemp">3°</div>
+				<div id="htemp">6°</div>
+			</div>
+			<div id="wed">
+				<div id="date">Wed</div>
+				<div id="icon"><img src="img/3.png"/></div>
+				<div id="ltemp">1°</div>
+				<div id="htemp">3°</div>
+			</div>
+			<div id="thu">
+				<div id="date">Thu</div>
+				<div id="icon"><img src="img/4.png"/></div>
+				<div id="ltemp">-2°</div>
+				<div id="htemp">0°</div>
+			</div>
+			<div id="fri">
+			<div id="date">Fri</div>
+				<div id="icon"><img src="img/5.png"/></div>
+				<div id="ltemp">-2°</div>
+				<div id="htemp">1°</div></div>
+		</div>
+	</body>
+</html>
